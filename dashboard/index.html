@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Analytics Dashboard | Regression • Classification • Time Series</title>
+    <meta name="description" content="Interactive Machine Learning Dashboard showcasing Regression, Classification, and Time Series analysis">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4L36 12V28L20 36L4 28V12L20 4Z" stroke="url(#grad1)" stroke-width="2" fill="none"/>
+                        <circle cx="20" cy="20" r="6" fill="url(#grad1)"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1"/>
+                                <stop offset="100%" style="stop-color:#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">ML Analytics</span>
+            </div>
+            <nav class="nav">
+                <a href="#overview" class="nav-link active">Overview</a>
+                <a href="#regression" class="nav-link">Regression</a>
+                <a href="#classification" class="nav-link">Classification</a>
+                <a href="#timeseries" class="nav-link">Time Series</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="gradient-text">Machine Learning</span>
+                <br>Analytics Dashboard
+            </h1>
+            <p class="hero-subtitle">
+                Comprehensive analysis covering Regression, Classification, and Time Series forecasting
+                with interactive visualizations and model comparisons.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-icon regression-icon">📈</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Regression</span>
+                        <span class="stat-value" id="regression-models">6 Models</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon classification-icon">🎯</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Classification</span>
+                        <span class="stat-value" id="classification-models">4 Models</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon timeseries-icon">📊</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Time Series</span>
+                        <span class="stat-value" id="timeseries-models">3 Models</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Regression Section -->
+            <section id="regression" class="section">
+                <div class="section-header">
+                    <div class="section-icon regression-bg">🏠</div>
+                    <div>
+                        <h2 class="section-title">Regression Analysis</h2>
+                        <p class="section-subtitle">House Price Prediction using Multiple Algorithms</p>
+                    </div>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>Problem Statement</h3>
+                        <p>Predict house prices based on features like square footage, bedrooms, bathrooms, location, and amenities.</p>
+                        <div class="tag-list">
+                            <span class="tag">Supervised Learning</span>
+                            <span class="tag">Continuous Output</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card best-model-card">
+                        <h3>Best Model</h3>
+                        <div class="best-model" id="regression-best">
+                            <span class="model-name">Loading...</span>
+                            <span class="model-score">R² = --</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-grid" id="regression-results">
+                    <div class="loading-card">
+                        <div class="spinner"></div>
+                        <p>Loading results...</p>
+                    </div>
+                </div>
+
+                <div class="visualizations-grid">
+                    <div class="viz-card">
+                        <h4>Model Comparison</h4>
+                        <img id="reg-comparison" src="" alt="Model Comparison" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>Actual vs Predicted</h4>
+                        <img id="reg-actual-pred" src="" alt="Actual vs Predicted" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>Feature Importance</h4>
+                        <img id="reg-importance" src="" alt="Feature Importance" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>Residuals Distribution</h4>
+                        <img id="reg-residuals" src="" alt="Residuals" class="viz-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Classification Section -->
+            <section id="classification" class="section">
+                <div class="section-header">
+                    <div class="section-icon classification-bg">📊</div>
+                    <div>
+                        <h2 class="section-title">Classification Analysis</h2>
+                        <p class="section-subtitle">Customer Churn Prediction</p>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>Problem Statement</h3>
+                        <p>Predict whether a customer will churn based on their usage patterns, contract details, and support interactions.</p>
+                        <div class="tag-list">
+                            <span class="tag">Binary Classification</span>
+                            <span class="tag">Imbalanced Data</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card best-model-card">
+                        <h3>Best Model</h3>
+                        <div class="best-model" id="classification-best">
+                            <span class="model-name">Loading...</span>
+                            <span class="model-score">F1 = --</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-grid" id="classification-results">
+                    <div class="loading-card">
+                        <div class="spinner"></div>
+                        <p>Loading results...</p>
+                    </div>
+                </div>
+
+                <div class="visualizations-grid">
+                    <div class="viz-card">
+                        <h4>Model Comparison</h4>
+                        <img id="cls-comparison" src="" alt="Model Comparison" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>ROC Curves</h4>
+                        <img id="cls-roc" src="" alt="ROC Curves" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>Confusion Matrix</h4>
+                        <img id="cls-confusion" src="" alt="Confusion Matrix" class="viz-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Series Section -->
+            <section id="timeseries" class="section">
+                <div class="section-header">
+                    <div class="section-icon timeseries-bg">📈</div>
+                    <div>
+                        <h2 class="section-title">Time Series Analysis</h2>
+                        <p class="section-subtitle">Sales Forecasting</p>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>Problem Statement</h3>
+                        <p>Forecast future sales based on historical patterns, trends, and seasonality in the data.</p>
+                        <div class="tag-list">
+                            <span class="tag">Forecasting</span>
+                            <span class="tag">Seasonal Patterns</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card best-model-card">
+                        <h3>Best Model</h3>
+                        <div class="best-model" id="timeseries-best">
+                            <span class="model-name">Loading...</span>
+                            <span class="model-score">RMSE = --</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-grid" id="timeseries-results">
+                    <div class="loading-card">
+                        <div class="spinner"></div>
+                        <p>Loading results...</p>
+                    </div>
+                </div>
+
+                <div class="visualizations-grid">
+                    <div class="viz-card wide">
+                        <h4>Forecast Comparison</h4>
+                        <img id="ts-forecast" src="" alt="Forecast" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>Time Series Decomposition</h4>
+                        <img id="ts-decomposition" src="" alt="Decomposition" class="viz-image">
+                    </div>
+                    <div class="viz-card">
+                        <h4>Model Comparison</h4>
+                        <img id="ts-comparison" src="" alt="Model Comparison" class="viz-image">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>ML Analytics Dashboard • Built with Python, scikit-learn, and Flask</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

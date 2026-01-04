@@ -1,0 +1,293 @@
+{
+  "task": "Classification",
+  "problem": "Customer Churn Prediction",
+  "dataset": {
+    "total_samples": 3000,
+    "train_samples": 2400,
+    "test_samples": 600,
+    "features": [
+      "tenure_months",
+      "monthly_charges",
+      "total_charges",
+      "contract_type",
+      "payment_method",
+      "tech_support",
+      "online_security",
+      "online_backup",
+      "device_protection",
+      "num_complaints",
+      "support_calls"
+    ],
+    "target": "churn",
+    "class_distribution": {
+      "no_churn": 1629,
+      "churn": 1371,
+      "churn_rate": 45.7
+    }
+  },
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.6683333333333333,
+      "precision": 0.649402390438247,
+      "recall": 0.5948905109489051,
+      "f1_score": 0.6209523809523809,
+      "roc_auc": 0.6991178182795217,
+      "confusion_matrix": [
+        [
+          238,
+          88
+        ],
+        [
+          111,
+          163
+        ]
+      ],
+      "cv_f1_mean": 0.6433700059700159,
+      "cv_f1_std": 0.023063561137189773
+    },
+    "Decision Tree": {
+      "accuracy": 0.64,
+      "precision": 0.6066176470588235,
+      "recall": 0.6021897810218978,
+      "f1_score": 0.6043956043956044,
+      "roc_auc": 0.6453360798889437,
+      "confusion_matrix": [
+        [
+          219,
+          107
+        ],
+        [
+          109,
+          165
+        ]
+      ],
+      "cv_f1_mean": 0.5840398917200917,
+      "cv_f1_std": 0.019516934993194134
+    },
+    "Random Forest": {
+      "accuracy": 0.6533333333333333,
+      "precision": 0.6231343283582089,
+      "recall": 0.6094890510948905,
+      "f1_score": 0.6162361623616236,
+      "roc_auc": 0.7022020957413461,
+      "confusion_matrix": [
+        [
+          225,
+          101
+        ],
+        [
+          107,
+          167
+        ]
+      ],
+      "cv_f1_mean": 0.6271195482959266,
+      "cv_f1_std": 0.024713270044813614
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.6433333333333333,
+      "precision": 0.6111111111111112,
+      "recall": 0.6021897810218978,
+      "f1_score": 0.6066176470588235,
+      "roc_auc": 0.7020341677488693,
+      "confusion_matrix": [
+        [
+          221,
+          105
+        ],
+        [
+          109,
+          165
+        ]
+      ],
+      "cv_f1_mean": 0.6592773707521002,
+      "cv_f1_std": 0.003403508896414301
+    },
+    "AdaBoost": {
+      "accuracy": 0.6733333333333333,
+      "precision": 0.6455223880597015,
+      "recall": 0.6313868613138686,
+      "f1_score": 0.6383763837638377,
+      "roc_auc": 0.7251466571134297,
+      "confusion_matrix": [
+        [
+          231,
+          95
+        ],
+        [
+          101,
+          173
+        ]
+      ],
+      "cv_f1_mean": 0.6544017185414839,
+      "cv_f1_std": 0.007039335839012074
+    },
+    "Extra Trees": {
+      "accuracy": 0.6466666666666666,
+      "precision": 0.6201550387596899,
+      "recall": 0.583941605839416,
+      "f1_score": 0.6015037593984962,
+      "roc_auc": 0.668566118848238,
+      "confusion_matrix": [
+        [
+          228,
+          98
+        ],
+        [
+          114,
+          160
+        ]
+      ],
+      "cv_f1_mean": 0.5890910684908618,
+      "cv_f1_std": 0.01815303206893529
+    },
+    "SVM": {
+      "accuracy": 0.65,
+      "precision": 0.628,
+      "recall": 0.572992700729927,
+      "f1_score": 0.5992366412213741,
+      "roc_auc": 0.6902848058752407,
+      "confusion_matrix": [
+        [
+          233,
+          93
+        ],
+        [
+          117,
+          157
+        ]
+      ],
+      "cv_f1_mean": 0.6196528293420144,
+      "cv_f1_std": 0.014961422154304217
+    },
+    "KNN": {
+      "accuracy": 0.61,
+      "precision": 0.58,
+      "recall": 0.5291970802919708,
+      "f1_score": 0.5534351145038168,
+      "roc_auc": 0.6285208902422641,
+      "confusion_matrix": [
+        [
+          221,
+          105
+        ],
+        [
+          129,
+          145
+        ]
+      ],
+      "cv_f1_mean": 0.592616115067728,
+      "cv_f1_std": 0.01339290296697905
+    },
+    "Naive Bayes": {
+      "accuracy": 0.6433333333333333,
+      "precision": 0.6153846153846154,
+      "recall": 0.583941605839416,
+      "f1_score": 0.599250936329588,
+      "roc_auc": 0.6874076396041378,
+      "confusion_matrix": [
+        [
+          226,
+          100
+        ],
+        [
+          114,
+          160
+        ]
+      ],
+      "cv_f1_mean": 0.6433095056992519,
+      "cv_f1_std": 0.03483217312856309
+    },
+    "Neural Network": {
+      "accuracy": 0.6016666666666667,
+      "precision": 0.5641025641025641,
+      "recall": 0.5620437956204379,
+      "f1_score": 0.5630712979890311,
+      "roc_auc": 0.6380703954144462,
+      "confusion_matrix": [
+        [
+          207,
+          119
+        ],
+        [
+          120,
+          154
+        ]
+      ],
+      "cv_f1_mean": 0.5600158731950173,
+      "cv_f1_std": 0.01760593474154188
+    }
+  },
+  "best_model": {
+    "name": "AdaBoost",
+    "f1_score": 0.6383763837638377,
+    "roc_auc": 0.7251466571134297,
+    "accuracy": 0.6733333333333333
+  },
+  "feature_importance": {
+    "Random Forest": {
+      "tenure_months": 0.19982969938718612,
+      "monthly_charges": 0.19280497907041536,
+      "total_charges": 0.19391883920392566,
+      "contract_type": 0.09030669322183642,
+      "payment_method": 0.06029291545780421,
+      "tech_support": 0.026372782507836902,
+      "online_security": 0.02517343651264248,
+      "online_backup": 0.027265656330481457,
+      "device_protection": 0.029091973739573646,
+      "num_complaints": 0.06792749521118513,
+      "support_calls": 0.08701552935711264
+    },
+    "Gradient Boosting": {
+      "tenure_months": 0.3007811161294928,
+      "monthly_charges": 0.15259310597060582,
+      "total_charges": 0.13100154188492333,
+      "contract_type": 0.24288190574392512,
+      "payment_method": 0.03664227441278691,
+      "tech_support": 0.01804740821271247,
+      "online_security": 0.0336358175229705,
+      "online_backup": 0.0027908468170661353,
+      "device_protection": 0.015131485768015764,
+      "num_complaints": 0.03381220592812718,
+      "support_calls": 0.032682291609373935
+    },
+    "Extra Trees": {
+      "tenure_months": 0.1858056185390743,
+      "monthly_charges": 0.15002061612587833,
+      "total_charges": 0.15213867611131177,
+      "contract_type": 0.09758725750121847,
+      "payment_method": 0.0795004565879707,
+      "tech_support": 0.029390178407908658,
+      "online_security": 0.027588694406577016,
+      "online_backup": 0.03909403398017396,
+      "device_protection": 0.03310997281403284,
+      "num_complaints": 0.09312848075886009,
+      "support_calls": 0.11263601476699403
+    },
+    "Decision Tree": {
+      "tenure_months": 0.2330776788172484,
+      "monthly_charges": 0.1887649215830577,
+      "total_charges": 0.15157652947765748,
+      "contract_type": 0.13253334017028648,
+      "payment_method": 0.0647749962989992,
+      "tech_support": 0.02192326300932799,
+      "online_security": 0.031196339322247184,
+      "online_backup": 0.027899090965002326,
+      "device_protection": 0.01808564454056479,
+      "num_complaints": 0.06893024834933127,
+      "support_calls": 0.06123794746627743
+    },
+    "AdaBoost": {
+      "tenure_months": 0.1951235629855001,
+      "monthly_charges": 0.29809162605089007,
+      "total_charges": 0.02625293067042266,
+      "contract_type": 0.1757341846840559,
+      "payment_method": 0.06062697242759303,
+      "tech_support": 0.03448509173409421,
+      "online_security": 0.05061183341462352,
+      "online_backup": 0.0,
+      "device_protection": 0.05179332943291781,
+      "num_complaints": 0.06098100201369175,
+      "support_calls": 0.04629946658621074
+    }
+  }
+}

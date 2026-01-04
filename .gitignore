@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# Data
+data/
+*.csv
+
+# Output / Artifacts
+output/models/
+output/logs/
+*.pkl
+*.png
+
+# OS
+.DS_Store
+Thumbs.db
